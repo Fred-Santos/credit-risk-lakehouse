@@ -1,5 +1,12 @@
 # F09.2 — estados, erros e retomada
 
+**Escopo: MVP preservado.** Este documento descreve contratos, procedimentos ou
+resultados do fluxo original de três fontes. Para a entrega atual de 17 fontes
+e 447.305 casos, consulte o [README](../../README.md) e os
+[contratos da expansão](../../docs/contratos/EXPANSAO_SILVER_E_ABT.md).
+As evidências e interfaces dos dois fluxos permanecem identificadas separadamente.
+
+
 Use o supervisor para executar a interface operacional:
 
 ```bash

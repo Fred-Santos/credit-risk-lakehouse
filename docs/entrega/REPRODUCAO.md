@@ -1,5 +1,27 @@
 # Reprodução por instruções e autorrevisão
 
+## Reprodução da entrega atual
+
+A sequência completa com dados reais está no
+[README principal](../../README.md#reproduzir-a-entrega-atual): aquisição das
+17 fontes, Bronze temporal, Silver, auditoria, duas ABTs, análise e publicação
+S3 com recuperação. Use os IDs produzidos em sua execução.
+
+Sem acesso à competição, após os três bootstraps, execute:
+
+```bash
+bash scripts/project.sh scripts/run_tests.py --suite e2e --integration-required
+```
+
+A suíte cobre MVP e expansão com dados inventados. O e2e da expansão usa cinco
+fontes de níveis 0/1/2 e publica 18 Delta temporárias; a entrega real usa 17
+fontes e publica 42 Delta. A [E08](../evidencias/E08_ACEITACAO_EXPANSAO.md)
+registra 174 testes aprovados no ambiente local existente. A prova de instalação
+nova F10 e a autorrevisão F11 abaixo têm escopo histórico próprio.
+
+## Demonstração histórica F11 em cópia isolada
+
+
 Esta revisão é feita pelo próprio executor, seguindo comandos em outra cópia.
 Não houve avaliador externo. O ambiente do autor e o kernel do notebook não são
 requisitos para a trilha sintética. Os dados Home Credit não acompanham a cópia.

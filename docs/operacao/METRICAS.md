@@ -1,5 +1,12 @@
 # F09.3 — métricas da operação
 
+**Escopo: MVP preservado.** Este documento descreve contratos, procedimentos ou
+resultados do fluxo original de três fontes. Para a entrega atual de 17 fontes
+e 447.305 casos, consulte o [README](../../README.md) e os
+[contratos da expansão](../../docs/contratos/EXPANSAO_SILVER_E_ABT.md).
+As evidências e interfaces dos dois fluxos permanecem identificadas separadamente.
+
+
 O [supervisor](ESTADOS_E_ERROS.md) mantém tempos e recursos em
 `artifacts/f09/operations/<operation_id>.json`. Cada tentativa liga seu resultado
 a `artifacts/f09/runs/<run_id>.json`, que contém as métricas do processamento.

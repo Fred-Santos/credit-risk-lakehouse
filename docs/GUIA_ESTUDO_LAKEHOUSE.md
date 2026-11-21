@@ -1,5 +1,20 @@
 # Percurso didático da implementação
 
+## Visão da entrega atual
+
+O projeto integra 17 tabelas de treino e 447.305 casos de janeiro–setembro/2020.
+Entrega duas ABTs com 166 atributos retrospectivos, análise de nove meses e
+42 tabelas Delta publicadas no S3 local. A E08 registra 174 testes aprovados.
+Construção e integridade das ABTs foram verificadas; disponibilidade histórica
+dos atributos e maturação do target permanecem pendentes para uso preditivo.
+
+Para entender o estado atual, leia o
+[capítulo 13](estudo/13_EXPANSAO_E_VALIDACAO_TEMPORAL.md) junto à
+[arquitetura](entrega/ARQUITETURA.md). Os capítulos 1–12 ensinam os fundamentos
+pela implementação preservada do MVP; seus números e comandos mantêm esse
+escopo. A sequência de reprodução atual está no [README](../README.md).
+
+
 Material opcional de aprofundamento. Para avaliar ou executar a solução, comece
 pelo [índice da documentação](README.md).
 
@@ -82,7 +97,7 @@ Os trechos de código didáticos são identificados como tal. Snippets que usam
 mencionados no capítulo. Comandos completos informam seu ambiente e efeito.
 Exemplos inventados não representam resultados da Home Credit.
 
-## Como reconstruir mentalmente o que já foi executado
+## Reconstrução didática do MVP preservado
 
 Depois dos capítulos 1–11, acompanhe este caminho. Cada saída torna-se entrada
 ou evidência da etapa seguinte:
@@ -152,11 +167,12 @@ com cinco cenários reais. A [F10](evidencias/F10_ACEITACAO.md) consolidou
 153 testes obrigatórios sem ignorados em instalação nova e um e2e totalmente
 sintético. A CI está configurada, sem execução remota nesta sessão.
 
-## Entrega concluída e evolução opcional
+## Entrega atual e evolução opcional
 
-Os capítulos 9–12 explicam contratos, consumo, operação e entrega. A
-[demonstração](entrega/DEMONSTRACAO.md) e a [nota técnica](entrega/CONCLUSAO_TECNICA.md)
-fecham o escopo. Trabalhos futuros ficam no [backlog](entrega/EVOLUCAO_E_AWS.md).
+Os capítulos 9–12 explicam contratos, consumo, operação e entrega no MVP.
+O capítulo 13 acompanha a expansão concluída E00–E08. A
+[nota técnica](entrega/CONCLUSAO_TECNICA.md) consolida a entrega atual; a
+[demonstração F11](entrega/DEMONSTRACAO.md) preserva sua finalidade sintética. Trabalhos futuros ficam no [backlog](entrega/EVOLUCAO_E_AWS.md).
 
 As entregas devem permitir responder tanto a uma pergunta analítica quanto à
 pergunta de engenharia: “Quais entradas, regras e versões produziram esse número?”

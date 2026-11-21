@@ -1,5 +1,11 @@
 # Aprendizados, evolução e inventário para AWS
 
+A expansão E00–E08 já entregou 17 fontes, 447.305 casos e 42 tabelas Delta
+publicadas. O backlog abaixo parte desse estado; integração das tabelas de
+treino e aumento além de 50 mil casos já foram realizados.
+[Resultados atuais](../../README.md#entrega-atual).
+
+
 O escopo local fecha com ingestão, contratos, incremento, publicação, análise,
 operação e provas de recuperação. Evoluções abaixo não contam como pendências
 ocultas da entrega e não foram provisionadas.
@@ -8,7 +14,7 @@ ocultas da entrega e não foram provisionadas.
 |---|---|
 | Join direto com histórico 1:N duplica casos | Agregar antes do join e conferir o grão da ABT |
 | Contagens iguais podem esconder valores alterados | Reconciliar todas as colunas, nos dois sentidos |
-| Commit Delta não publica cinco tabelas atomicamente | Manifesto aprovado e ponteiro de consumo da aplicação |
+| Commit Delta é atômico por tabela; a entrega atual publica um conjunto de 42 Delta | Manifesto aprovado e ponteiro de consumo da aplicação |
 | Retry precisa reconhecer o que já foi commitado | Identidade lógica estável, tentativas separadas e verificação do estado |
 | Notebook contém dados também nos outputs | Export sanitizado e hashes próprios sem destruir evidências históricas |
 | Dependência ausente não valida integração | CI obrigatória sem skips e bootstrap reproduzido |
@@ -18,7 +24,7 @@ ocultas da entrega e não foram provisionadas.
 |---|---|
 | Revisão externa e GitHub Actions remoto | Autorizar disponibilização do código; registrar job e feedback reais |
 | Divulgação de resultados Home Credit | Rever condições/autorização; não incluir dados individuais ou outputs por padrão |
-| Mais tabelas/volume | Medir orçamento de recursos e reconciliar novo grão/contratos |
+| Novas fontes ou janelas além da entrega atual | As 17 tabelas de treino e a janela janeiro–setembro/2020 já foram integradas; medir recursos e reconciliar contratos para qualquer ampliação adicional |
 | Orquestrador/agenda | Necessidade operacional concreta e desenho de retomada |
 | Dashboard | Pergunta de exploração que justifique manutenção adicional |
 | Treino preditivo | Estudo de disponibilidade temporal, vazamento e avaliação fora deste escopo |

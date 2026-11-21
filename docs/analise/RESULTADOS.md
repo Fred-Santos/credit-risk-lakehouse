@@ -1,5 +1,12 @@
 # F07 — resultados e revisão das conclusões
 
+**Escopo: MVP preservado.** Este documento descreve contratos, procedimentos ou
+resultados do fluxo original de três fontes. Para a entrega atual de 17 fontes
+e 447.305 casos, consulte o [README](../../README.md) e os
+[contratos da expansão](../../docs/contratos/EXPANSAO_SILVER_E_ABT.md).
+As evidências e interfaces dos dois fluxos permanecem identificadas separadamente.
+
+
 Análise local em 13/11/2026. Publicação final **6f4406dd0180850e23d5283e**,
 com 50.000 casos. As consultas e unidades seguem
 [perguntas e método](PERGUNTAS_E_METODO.md).

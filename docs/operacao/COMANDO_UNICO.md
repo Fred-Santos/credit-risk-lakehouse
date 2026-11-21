@@ -1,10 +1,17 @@
 # Comando operacional — F09.1
 
+**Escopo: MVP preservado.** Este documento descreve contratos, procedimentos ou
+resultados do fluxo original de três fontes. Para a entrega atual de 17 fontes
+e 447.305 casos, consulte o [README](../../README.md) e os
+[contratos da expansão](../../docs/contratos/EXPANSAO_SILVER_E_ABT.md).
+As evidências e interfaces dos dois fluxos permanecem identificadas separadamente.
+
+
 O comando valida dependências locais já aprovadas (RAW, recorte, Bronze e landing
 F04), espelha entradas por hash e executa Silver → Gold → publicação S3.
 Não exige F05/F06 como comparadores nem injeta falhas ou reinicia o servidor
 no meio do processamento. A aquisição autenticada e os aceites de entrada
-continuam nos comandos documentados no README; fonte ausente bloqueia a operação.
+estão no roteiro histórico do MVP; fonte ausente bloqueia a operação.
 
 ```bash
 bash scripts/objects.sh -m src.pipelines.operate_lakehouse \

@@ -1,5 +1,11 @@
 # Ambiente local e aquisição da Home Credit
 
+O ambiente é compartilhado pelos dois fluxos. A entrega atual usa o perfil de
+expansão de 8 GiB, descrito ao final; os ensaios F01–F10 abaixo preservam as
+medições históricas do MVP. Para executar as 17 fontes, siga o
+[README atual](../README.md#reproduzir-a-entrega-atual).
+
+
 Atualizado em 13/11/2026. Implementação validada em Linux x86_64/WSL2.
 
 ## 1. O que está preparado
@@ -285,5 +291,8 @@ outro perfil; uma JVM existente não pode ter seu heap redimensionado.
 A [evidência E01](evidencias/E01_PERFIL_EXECUCAO.md) registra heap efetivo,
 leitura/agregação real, Delta local e prova sintética Delta/S3. O Linux/WSL
 enxerga cerca de 15,46 GiB; os 32 GB físicos não estão integralmente disponíveis
-a esse ambiente. A carga representativa passou; o fluxo completo será medido
-em E07.
+a esse ambiente. As etapas reais foram medidas em E02–E07: a Silver registrou
+pico RSS amostrado da árvore de 9,59 GiB. A E07 verificou publicação e recuperação
+reutilizando snapshots locais aprovados, sem alegar recomputação RAW→Gold do zero.
+O perfil de 8 GiB foi mantido. Consulte as
+[medições e seus limites](evidencias/E07_PUBLICACAO_EXPANSAO.md).

@@ -1,5 +1,12 @@
 # F07 — executar, conferir e reproduzir o relatório
 
+**Escopo: MVP preservado.** Este documento descreve contratos, procedimentos ou
+resultados do fluxo original de três fontes. Para a entrega atual de 17 fontes
+e 447.305 casos, consulte o [README](../../README.md) e os
+[contratos da expansão](../../docs/contratos/EXPANSAO_SILVER_E_ABT.md).
+As evidências e interfaces dos dois fluxos permanecem identificadas separadamente.
+
+
 O relatório consome três publicações Gold aprovadas, com IDs obrigatórios.
 Não reconstrói ABT, não altera tabelas e não troca CURRENT. Perguntas e método
 em [PERGUNTAS_E_METODO.md](PERGUNTAS_E_METODO.md); achados em

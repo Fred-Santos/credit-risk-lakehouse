@@ -1,5 +1,20 @@
 # F08 — operação do armazenamento local
 
+## Operação da entrega atual
+
+O serviço SeaweedFS e os comandos de iniciar/parar abaixo são compartilhados.
+A expansão publica **42 Delta** no prefixo `lakehouse-expansion-v1`, com
+manifestos, versões e CURRENT próprios. A sequência de publicação e consumo,
+com IDs gerados na instalação, está no
+[README](../../README.md#4-publicar-no-s3-local-e-verificar-a-recuperação).
+A [E07](../evidencias/E07_PUBLICACAO_EXPANSAO.md) registra falhas, retry,
+rollback, reinício e consumidor independente.
+
+As seções de demonstração, layout e relatórios F08 abaixo descrevem o MVP no
+prefixo `lakehouse-v1`, com três Silver e duas Gold. Seus IDs são exemplos de
+execuções históricas e dependem dos respectivos snapshots locais.
+
+
 A [decisão e arquitetura](DECISAO_E_ARQUITETURA.md) define camadas, licenças,
 conector e o limite de um host/driver cooperante. A configuração está em
 [object_store_v1.yaml](../../configs/object_store_v1.yaml).

@@ -12,7 +12,7 @@ para treino preditivo. Dados reais, credenciais e saídas individuais ficam loca
 | [Arquitetura](entrega/ARQUITETURA.md) | Componentes, fluxo e garantias |
 | [Escopo do produto](ESCOPO_PRODUTO.md) | Problema, entregas e limites |
 | [Decisões técnicas](DECISOES.md) | Escolhas, justificativas e alternativas |
-| [Reprodução](entrega/REPRODUCAO.md) e [README principal](../README.md) | Ambiente e comandos do MVP |
+| [README principal](../README.md#reproduzir-a-entrega-atual) e [reprodução](entrega/REPRODUCAO.md) | Execução atual com dados reais e alternativas sintéticas |
 | [Demonstração sintética](entrega/DEMONSTRACAO.md) | Fluxo verificável sem credenciais Kaggle |
 | [Resultados da expansão](analise/PUBLICO_EXPANSAO.md) | População, indicadores e limites de interpretação |
 | [Fonte e condições de uso](governance/SOURCE.md) | Acesso e restrições dos dados |
@@ -20,9 +20,8 @@ para treino preditivo. Dados reais, credenciais e saídas individuais ficam loca
 ## Contratos, operação e testes
 
 - [Contratos do MVP](contratos/README.md) e [contrato da expansão](contratos/EXPANSAO_SILVER_E_ABT.md).
-- [Publicação e recuperação](PUBLICACAO_E_RECUPERACAO.md).
-- [Operação S3 local](objetos/OPERACAO.md) e [comando operacional](operacao/COMANDO_UNICO.md).
-- [Lineage e inventário](operacao/LINEAGE_E_INVENTARIO.md).
+- [Publicação e recuperação atuais](evidencias/E07_PUBLICACAO_EXPANSAO.md) e [operação S3 local](objetos/OPERACAO.md).
+- Procedimentos do MVP: [protocolo de publicação](PUBLICACAO_E_RECUPERACAO.md), [comando operacional F09](operacao/COMANDO_UNICO.md) e [lineage e inventário](operacao/LINEAGE_E_INVENTARIO.md).
 - [Execução dos testes e CI](testes/EXECUCAO_E_CI.md).
 - [Matriz T01–T24 do MVP](testes/MATRIZ_ACEITACAO.md) e [matriz X01–X17 da expansão](testes/MATRIZ_EXPANSAO.md).
 
@@ -47,8 +46,9 @@ abaixo descrevem o MVP e não substituem os resultados posteriores da expansão.
 ## Expansão
 
 As evidências E registram a execução com 17 fontes e 447.305 casos selecionados
-por data de decisão. Os comandos estão nos respectivos documentos, separados
-da reprodução do MVP.
+por data de decisão. A sequência de comandos atual está no
+[README principal](../README.md#reproduzir-a-entrega-atual); os documentos de
+evidência detalham cada execução e seus limites.
 
 | Evidência | Conteúdo |
 |---|---|

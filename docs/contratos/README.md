@@ -1,5 +1,12 @@
 # Contratos — snapshot Home Credit e recorte
 
+**Escopo: MVP preservado.** Este documento descreve contratos, procedimentos ou
+resultados do fluxo original de três fontes. Para a entrega atual de 17 fontes
+e 447.305 casos, consulte o [README](../../README.md) e os
+[contratos da expansão](../../docs/contratos/EXPANSAO_SILVER_E_ABT.md).
+As evidências e interfaces dos dois fluxos permanecem identificadas separadamente.
+
+
 O contrato do estado Silver persistido está em [SILVER_INICIAL.md](SILVER_INICIAL.md).
 Este documento continua descrevendo o snapshot RAW/recorte, com schemas de origem.
 A migração publicada está em [SILVER_GERENCIADA.md](SILVER_GERENCIADA.md), e o

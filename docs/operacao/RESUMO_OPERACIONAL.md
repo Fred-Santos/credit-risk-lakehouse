@@ -1,5 +1,12 @@
 # F09.5 — resumo operacional pontual
 
+**Escopo: MVP preservado.** Este documento descreve contratos, procedimentos ou
+resultados do fluxo original de três fontes. Para a entrega atual de 17 fontes
+e 447.305 casos, consulte o [README](../../README.md) e os
+[contratos da expansão](../../docs/contratos/EXPANSAO_SILVER_E_ABT.md).
+As evidências e interfaces dos dois fluxos permanecem identificadas separadamente.
+
+
 ```bash
 bash scripts/objects.sh -m src.pipelines.operational_status \
   --sample 7d58bbdaa00cbabfbce54d26

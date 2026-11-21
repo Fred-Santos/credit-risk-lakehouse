@@ -1,5 +1,12 @@
 # F07 — perguntas, população e método analítico
 
+**Escopo: MVP preservado.** Este documento descreve contratos, procedimentos ou
+resultados do fluxo original de três fontes. Para a entrega atual de 17 fontes
+e 447.305 casos, consulte o [README](../../README.md) e os
+[contratos da expansão](../../docs/contratos/EXPANSAO_SILVER_E_ABT.md).
+As evidências e interfaces dos dois fluxos permanecem identificadas separadamente.
+
+
 Definição de consumo da Gold v1, em 13/11/2026. O [escopo do produto](../ESCOPO_PRODUTO.md)
 apresentou P01–P06 como objetivos; esta matriz fecha o que será calculado.
 Política executável: [analysis_policy_v1.yaml](../../configs/analysis_policy_v1.yaml).
