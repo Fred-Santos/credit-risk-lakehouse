@@ -1,5 +1,10 @@
 # Tabelas Delta iniciais — F03.4
 
+**Escopo histórico: implementação Silver do MVP.** Os estados e próximos passos
+abaixo pertencem à fase registrada. A Silver atual integra 17 tabelas; consulte
+os [contratos da expansão](../contratos/EXPANSAO_SILVER_E_ABT.md) e a
+[evidência E03](../evidencias/E03_SILVER_EXPANSAO.md).
+
 Materializador: [initial_delta.py](../../src/silver/initial_delta.py).
 Comando: [materialize_silver_initial.py](../../src/pipelines/materialize_silver_initial.py).
 Esta entrega persiste três tabelas tratadas e verifica sua leitura por Delta.

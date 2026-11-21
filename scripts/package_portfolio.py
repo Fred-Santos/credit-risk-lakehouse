@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import re
 from pathlib import Path
 import shutil
 import tarfile
@@ -23,13 +24,29 @@ def package(demo,output,report_path):
     with tempfile.TemporaryDirectory(prefix='credit-risk-portfolio-') as folder:
         source=Path(folder)/'source';export_source.export(source)
         review=audit_source.audit(source);assert review['status']=='passed',review
-        readme=(ROOT/'docs/entrega/PACOTE_SINTETICO.md').read_text()
-        for name in ['DEMONSTRACAO','ARQUITETURA','REPRODUCAO']:
-            readme=readme.replace(']('+name+'.md)','](docs/entrega/'+name+'.md)')
-        (source/'README.md').write_text(readme)
-        for name in ['ARQUITETURA','DEMONSTRACAO','REPRODUCAO','PACOTE_SINTETICO']:
-            target=source/'docs/entrega'/(name+'.md');target.parent.mkdir(parents=True,exist_ok=True)
-            shutil.copyfile(ROOT/'docs/entrega'/(name+'.md'),target)
+        # Preserve the current presentation and include its Markdown references.
+        pending=[ROOT/'README.md',ROOT/'docs/entrega/PACOTE_SINTETICO.md']
+        copied=set()
+        while pending:
+            document=pending.pop().resolve()
+            if document in copied:continue
+            if not document.is_relative_to(ROOT) or document.is_symlink():
+                raise ValueError('Referência documental fora da origem')
+            copied.add(document)
+            target=source/document.relative_to(ROOT)
+            target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(document,target)
+            for link in re.findall(r'\]\(([^)]+)\)',document.read_text()):
+                if link.startswith(('https:','http:','#','mailto:')):continue
+                reference=(document.parent/link.split('#')[0]).resolve()
+                if not reference.is_relative_to(ROOT):
+                    raise ValueError('Referência documental fora da origem')
+                if reference.is_file() and reference.suffix=='.md':pending.append(reference)
+                elif reference.is_file() and reference.suffix in ('.png','.svg') and reference.is_relative_to(ROOT/'docs'):
+                    if reference.is_symlink():raise ValueError('Imagem não pode ser symlink')
+                    image_target=source/reference.relative_to(ROOT)
+                    image_target.parent.mkdir(parents=True,exist_ok=True)
+                    shutil.copyfile(reference,image_target)
         image=source/'docs/entrega/imagens/correcao_sintetica.png';image.parent.mkdir(parents=True,exist_ok=True)
         shutil.copyfile(demo/'correction.png',image)
         dest=source/'demo';dest.mkdir()
@@ -37,14 +54,29 @@ def package(demo,output,report_path):
             assert Path(name).name==name and sha(demo/name)==expected
             shutil.copyfile(demo/name,dest/name)
         for name in ['report.json','figures.json']:shutil.copyfile(demo/name,dest/name)
+        # References to runtime data remain documentary; bundled docs and code
+        # must resolve inside the package, without relying on the author's tree.
+        for document in source.rglob('*.md'):
+            for link in re.findall(r'\]\(([^)]+)\)',document.read_text()):
+                if link.startswith(('https:','http:','#','mailto:')):continue
+                relative=link.split('#')[0]
+                if not relative:continue
+                reference=(document.parent/relative).resolve()
+                if not reference.is_relative_to(source):
+                    raise ValueError('Link fora do pacote: '+link)
+                root_part=reference.relative_to(source).parts[0]
+                if (reference.suffix=='.md' or root_part in ('src','scripts','configs','tests','notebooks')) and not reference.exists():
+                    raise ValueError('Link ausente no pacote: '+str(document.relative_to(source))+': '+link)
         tokens=audit_source.known_secrets()
         entries={}
         for p in sorted(source.rglob('*')):
             if p.is_file():
                 assert not p.is_symlink() and not any(t in p.read_bytes() for t in tokens)
                 entries[p.relative_to(source).as_posix()]={'sha256':sha(p),'bytes':p.stat().st_size}
-        manifest={'version':1,'scope':'sanitized_code_and_invented_demo_only','external_publication_performed':False,
-            'restricted_data_included':False,'notebook_outputs':0,'files':entries}
+        manifest={'version':1,'scope':'sanitized_code_documentation_and_invented_demo','external_publication_performed':False,
+            'restricted_data_included':False,'notebook_outputs':0,
+            'documentation_entrypoint':'README.md','synthetic_demo_scope':'historical_mvp',
+            'documentation_files':len(copied),'files':entries}
         (source/'portfolio_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
         output.parent.mkdir(parents=True,exist_ok=True)
         with tarfile.open(output,'w:gz') as tar:

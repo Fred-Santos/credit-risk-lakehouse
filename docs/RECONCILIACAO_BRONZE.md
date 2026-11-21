@@ -1,5 +1,9 @@
 # Reconciliação da Bronze — F02.6
 
+**Escopo histórico: MVP de três fontes e 50 mil casos.** Para a seleção temporal
+atual, sem teto na janela, consulte o [README](../README.md) e a
+[Bronze da expansão](evidencias/E02_BRONZE_TEMPORAL.md).
+
 Implementação: [reconcile_bronze.py](../src/quality/reconcile_bronze.py), chamada
 automaticamente por `run_bronze_mvp`, depois da qualidade e emissão do lineage,
 antes de aprovar o gate. Não altera RAW, recorte ou Parquets Bronze.

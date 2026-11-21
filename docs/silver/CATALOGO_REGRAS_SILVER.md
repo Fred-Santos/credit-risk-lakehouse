@@ -1,5 +1,10 @@
 # Catálogo de decisões Silver — F03.1
 
+**Escopo histórico: implementação Silver do MVP.** Os estados e próximos passos
+abaixo pertencem à fase registrada. A Silver atual integra 17 tabelas; consulte
+os [contratos da expansão](../contratos/EXPANSAO_SILVER_E_ABT.md) e a
+[evidência E03](../evidencias/E03_SILVER_EXPANSAO.md).
+
 Revisado em 12/11/2026. Esta entrega cataloga e mede hipóteses; **ainda não
 materializa Silver**. Política planejada em
 [silver_policy_v1.yaml](../../configs/silver_policy_v1.yaml). A implementação

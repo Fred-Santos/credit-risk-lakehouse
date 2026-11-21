@@ -1,4 +1,8 @@
-"""F09.2: CLI com relatório de inicialização, estados, erros e retry limitado."""
+"""Operação histórica do MVP: três fontes e recorte de 50 mil casos.
+
+Para a expansão atual de 17 fontes, use scripts.run_expansion e
+scripts.deliver_expansion conforme a sequência do README.
+"""
 import argparse
 import json
 from pathlib import Path

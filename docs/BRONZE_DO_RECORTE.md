@@ -1,5 +1,9 @@
 # Bronze do recorte — entrada explícita e recuperação
 
+**Escopo histórico: MVP de três fontes e 50 mil casos.** Para a seleção temporal
+atual, sem teto na janela, consulte o [README](../README.md) e a
+[Bronze da expansão](evidencias/E02_BRONZE_TEMPORAL.md).
+
 Implementada e validada em Linux/WSL em 12/11/2026. Escopo: F02.3.
 
 Atualizações posteriores: [qualidade F02.5](QUALIDADE_BRONZE.md) e

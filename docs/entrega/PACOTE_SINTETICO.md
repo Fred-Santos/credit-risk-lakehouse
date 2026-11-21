@@ -5,9 +5,16 @@ com dados inteiramente inventados. Não inclui Home Credit, resultados individua
 reais, credenciais, logs locais, ambientes instalados ou histórico Git.
 A licença do código está em LICENSE; ela não concede direitos sobre o dataset.
 
-O projeto demonstra contratos, Delta, revisões e publicação coerente de três
-Silver e duas Gold. A demo começa em Silver tipada, com três casos e dois meses;
-não representa toda a ingestão. O teste e2e separado cobre RAW inventada até S3/Gold.
+A entrega atual integra 17 fontes e 447.305 casos, com duas ABTs, 166 atributos
+e 42 tabelas Delta publicadas no S3 local. O README principal do pacote preserva
+a apresentação atual e a documentação referenciada acompanha a distribuição.
+Os números reais são resultados documentados; os dados reais não são incluídos.
+
+A demonstração curta preserva o MVP: três Silver e duas Gold, com três casos
+e dois meses inventados, começando em Silver tipada. Para exercitar a expansão
+desde RAW, execute a suíte e2e abaixo: ela cobre também cinco fontes inventadas
+de níveis 0/1/2 e 18 Delta temporárias. A diferença de volume entre fixture e
+entrega real está explicitada na documentação.
 
 ## Preparar e executar
 
@@ -47,5 +54,6 @@ atesta integridade dos arquivos do pacote, não é assinatura de autoria externa
 A ABT é retrospectiva, sem elegibilidade temporal comprovada para treino. Não há
 ML, impacto financeiro medido, alta disponibilidade, multi-host ou AWS provisionada.
 A preparação deste arquivo não é uma publicação remota; a disponibilização externa
-é uma ação separada. A documentação completa e as evidências reais ficam na cópia
-local do projeto e não acompanham esta distribuição sintética.
+é uma ação separada. O pacote inclui a documentação Markdown referenciada pelo README, com os
+registros de evidências agregadas. Dados, relatórios locais em `artifacts/` e
+snapshots referenciados nessas evidências ficam fora da distribuição.

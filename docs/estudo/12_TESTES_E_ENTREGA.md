@@ -119,8 +119,9 @@ isoladas, então os números não devem ser somados como testes do mesmo nível.
 
 ## Conferir o comportamento da operação completa
 
-A matriz F09.6 em [operational_matrix_local.py](../../tests/operational_matrix_local.py)
-usa entradas reais já aprovadas e destinos temporários. Primeiro estabelece uma
+A matriz histórica F09.6 em `tests/operational_matrix_local.py` usa entradas
+reais já aprovadas e destinos temporários. Esse script é exclusivo do checkout
+local e fica fora do pacote sintético exportado. Primeiro estabelece uma
 publicação válida. Depois injeta coluna extra, target inválido e indisponibilidade
 física do serviço, além de testar entrada ausente. Os contratos e oráculos reais
 precisam bloquear as saídas inválidas e conservar o ponteiro anterior.

@@ -1,3 +1,5 @@
+# Perfil da entrega atual: 17 fontes, driver de 8 GiB.
+# Selecionado explicitamente pelos comandos de expansão; ver README.
 spark:
   master: local[2]
   app_name: credit-risk-expansion

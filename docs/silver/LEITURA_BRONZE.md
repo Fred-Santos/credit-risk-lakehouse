@@ -1,5 +1,10 @@
 # Leitor lógico da Bronze aprovada — F03.2
 
+**Escopo histórico: implementação Silver do MVP.** Os estados e próximos passos
+abaixo pertencem à fase registrada. A Silver atual integra 17 tabelas; consulte
+os [contratos da expansão](../contratos/EXPANSAO_SILVER_E_ABT.md) e a
+[evidência E03](../evidencias/E03_SILVER_EXPANSAO.md).
+
 Implementação: [read_bronze.py](../../src/silver/read_bronze.py).
 O leitor disponibiliza as três tabelas do recorte com dados e metadados
 preservados. Não converte datas, não une tabelas por join e não grava Silver.

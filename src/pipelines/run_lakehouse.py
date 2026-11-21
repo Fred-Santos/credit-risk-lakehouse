@@ -1,4 +1,8 @@
-"""F09: execução operacional sobre entradas locais aprovadas, sem baixar dados."""
+"""Operação histórica do MVP: três fontes e recorte de 50 mil casos.
+
+Para a expansão atual de 17 fontes, use scripts.run_expansion e
+scripts.deliver_expansion conforme a sequência do README.
+"""
 import argparse
 from functools import reduce
 import json

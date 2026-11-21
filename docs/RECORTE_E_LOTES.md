@@ -1,5 +1,9 @@
 # Recorte determinístico e lotes simulados
 
+**Escopo histórico: MVP de três fontes e 50 mil casos.** Para a seleção temporal
+atual, sem teto na janela, consulte o [README](../README.md) e a
+[Bronze da expansão](evidencias/E02_BRONZE_TEMPORAL.md).
+
 Versão 1, em 12/11/2026. Políticas implementadas e validadas com dados reais.
 Configuração: [sample_policy.yaml](../configs/sample_policy.yaml).
 Código: [build_sample.py](../src/pipelines/build_sample.py).

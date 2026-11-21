@@ -1,10 +1,13 @@
 # Fonte de dados — avaliação de adequação ao portfólio
 
-Atualizado em 12/11/2026. Home Credit mantida para o desenvolvimento com dados
-reais. O usuário informou inscrição na competição e autorizou a continuidade.
-Acesso autenticado pela API confirmado: seis arquivos reais adquiridos e
-inspecionados em 12/11/2026. Revisão da apresentação externa permanece separada,
-antes da publicação. Evidência: [fonte real](../evidencias/F00_F02_FONTE_REAL.md).
+Escopo de aquisição atualizado para a expansão concluída E00–E08. A entrega
+atual usa 32 Parquets de treino e o dicionário (33 arquivos, 1.328.474.848 bytes),
+com journal e checksums. Os seis arquivos adquiridos inicialmente foram
+reutilizados após verificação. [Aquisição](../evidencias/E02_AQUISICAO_EXPANSAO.md)
+e [inventário](../evidencias/E00_INVENTARIO_EXPANSAO.md).
+
+A análise de condições de uso abaixo preserva a consulta registrada em
+12/11/2026; esta atualização técnica não representa nova consulta às regras.
 
 ## 1. Identificação da fonte existente
 
@@ -14,12 +17,12 @@ antes da publicação. Evidência: [fonte real](../evidencias/F00_F02_FONTE_REAL
 | Publicador da competição | Home Credit |
 | Plataforma | Kaggle |
 | Identificador no código | `home-credit-credit-risk-model-stability` |
-| Aquisição implementada | CLI Kaggle em [ingest_raw.py](../../src/pipelines/ingest_raw.py) |
-| Dados atuais no checkout | Seis arquivos reais, 375.444.428 bytes, com journal e checksums |
+| Aquisição implementada | Catálogo versionado e API Kaggle em [acquire_expansion.py](../../scripts/acquire_expansion.py) |
+| Dados atuais no checkout | 33 arquivos reais, 1.328.474.848 bytes, com journal e checksums |
 | Evidências históricas | Dicionários e relatórios de fevereiro de 2026 |
 | Período atual confirmado na base | 2019-01-01 a 2020-10-05 |
 
-A aquisição atual seleciona cinco Parquets de treino e o CSV de definições;
+A aquisição atual seleciona 32 Parquets de treino e o CSV de definições;
 preserva os originais selecionados sem apagar outros dados. O comportamento
 antigo de baixar tudo e remover formatos/teste foi substituído. A licença MIT
 do repositório refere-se ao código, sem estender permissão aos dados de terceiros.
@@ -50,7 +53,7 @@ afirmação de que o uso anterior do usuário foi irregular.
 | Disponibilização de dados | Restrição identificada | Seção 7.B |
 | Autorização específica do usuário | Não examinada/não apresentada | Poderá alterar a decisão se cobrir o projeto |
 | Inscrição na competição | Informada pelo usuário; acesso autenticado confirmado | API listou os arquivos e permitiu aquisição seletiva |
-| Dados atuais, chaves e qualidade inicial | Inspeção exata aprovada nas três tabelas lógicas selecionadas | Relatório de 12/11/2026; não equivale a todos os contratos Silver/Gold |
+| Inventário e qualidade atuais | 17 tabelas perfiladas; Bronze e Silver reconciliadas na janela selecionada | [E00](../evidencias/E00_PERFIL_FONTES.md), [E02](../evidencias/E02_BRONZE_TEMPORAL.md) e [E03](../evidencias/E03_SILVER_EXPANSAO.md) |
 
 Consultas reproduzíveis em mecanismo de busca:
 
@@ -107,9 +110,10 @@ permanece como referência para a revisão da divulgação externa, sem envio e
 sem ser pré-requisito geral de preparação e desenvolvimento local.
 
 O [ambiente e a aquisição seletiva](../AMBIENTE_LOCAL.md) estão preparados.
-A autenticação funcionou; o inventário retornou 138 arquivos e os seis escolhidos
-foram adquiridos. A inspeção confirmou chaves, período e cobertura, conforme a
-[evidência atual](../evidencias/F00_F02_FONTE_REAL.md).
+Na aquisição inicial, a autenticação funcionou; o inventário retornou 138 arquivos
+e os seis escolhidos foram adquiridos. A expansão posterior completou os 33
+arquivos de treino/dicionário do catálogo versionado. A inspeção confirmou chaves, período e cobertura, conforme a
+[evidência histórica](../evidencias/F00_F02_FONTE_REAL.md).
 
 F00.2 foi aceita para o desenvolvimento local: fonte, acesso, condições e limite
 de divulgação registrados. Isso não declara os dados como abertos nem libera

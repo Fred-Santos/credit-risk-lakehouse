@@ -1,5 +1,10 @@
 # Tratamentos Silver e controle de perdas — F03.3
 
+**Escopo histórico: implementação Silver do MVP.** Os estados e próximos passos
+abaixo pertencem à fase registrada. A Silver atual integra 17 tabelas; consulte
+os [contratos da expansão](../contratos/EXPANSAO_SILVER_E_ABT.md) e a
+[evidência E03](../evidencias/E03_SILVER_EXPANSAO.md).
+
 Implementação: [transforms.py](../../src/silver/transforms.py).
 Política executável: [silver_policy_v1.yaml](../../configs/silver_policy_v1.yaml).
 Esta etapa executa transformações e valida a preservação dos dados. Não grava

@@ -1,5 +1,10 @@
 # Execução Silver inicial — F03.6
 
+**Escopo histórico: implementação Silver do MVP.** Os estados e próximos passos
+abaixo pertencem à fase registrada. A Silver atual integra 17 tabelas; consulte
+os [contratos da expansão](../contratos/EXPANSAO_SILVER_E_ABT.md) e a
+[evidência E03](../evidencias/E03_SILVER_EXPANSAO.md).
+
 Entrypoint: [run_silver_initial.py](../../src/pipelines/run_silver_initial.py).
 Aceite: [acceptance.py](../../src/silver/acceptance.py).
 O comando reúne as funções de F03.2–F03.5 numa execução sem sessão de notebook.

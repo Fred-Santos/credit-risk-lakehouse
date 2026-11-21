@@ -1,5 +1,9 @@
 # Qualidade da Bronze — F02.5
 
+**Escopo histórico: MVP de três fontes e 50 mil casos.** Para a seleção temporal
+atual, sem teto na janela, consulte o [README](../README.md) e a
+[Bronze da expansão](evidencias/E02_BRONZE_TEMPORAL.md).
+
 O CLI de snapshot continua sendo `run_bronze_mvp --sample <id>` ou `--raw`.
 `configs/quality_rules_bronze.yaml` agora referencia o contrato de snapshot.
 [bronze_contract.py](../src/quality/bronze_contract.py) gera regras a partir dele,

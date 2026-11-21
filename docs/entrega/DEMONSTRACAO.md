@@ -1,5 +1,24 @@
 # Demonstração curta com dados inventados
 
+## Apresentação da entrega atual
+
+Apresente primeiro os resultados da expansão no [README](../../README.md):
+17 fontes, 447.305 casos, duas ABTs retrospectivas e 42 Delta no S3 local.
+A [arquitetura](ARQUITETURA.md) e a [conclusão técnica](CONCLUSAO_TECNICA.md)
+explicam as garantias verificadas e os limites. Para demonstrar o fluxo atual
+sem Kaggle, após os bootstraps, execute:
+
+```bash
+bash scripts/project.sh scripts/run_tests.py --suite e2e --integration-required
+```
+
+Esse comando executa os e2e do MVP e da expansão. A fixture da expansão percorre
+RAW → Bronze → Silver → ABTs → análise → S3 com cinco fontes inventadas e
+18 Delta temporárias. Ela demonstra o comportamento; as evidências E00–E08
+registram separadamente os volumes reais.
+
+## Demonstração curta histórica do MVP
+
 Pré-requisito: executar os três bootstraps do README, em Linux x86_64. O endpoint
 usa somente loopback. O script cria um prefixo próprio, remove seus objetos e
 encerra o serviço se tiver sido responsável por iniciá-lo. Não remove dados reais.
@@ -12,7 +31,7 @@ bash scripts/analysis.sh scripts/render_demo.py --output artifacts/f11/minha-dem
 
 A demonstração usa três casos e três observações históricas inteiramente inventados.
 As entradas já têm schema Silver. Não representa uma nova aquisição ou um novo
-replay RAW; esse caminho completo é exercitado pelo e2e sintético da F10.
+replay RAW; esse caminho é exercitado pelos e2e separados do MVP e da expansão.
 
 | Passo para apresentar | Saída observável | Regra conferida pelo script |
 |---|---|---|
@@ -41,3 +60,19 @@ como clientes, moeda confirmada ou impacto financeiro real.
 ![Correção observada na fixture inventada](imagens/correcao_sintetica.png)
 
 Imagem gerada pelos CSVs da execução aprovada, sem representar dados reais.
+
+## Gerar o pacote de portfólio
+
+Após a demonstração curta e a renderização, use uma saída nova:
+
+```bash
+bash scripts/project.sh scripts/package_portfolio.py \
+  --demo artifacts/f11/minha-demo \
+  --output artifacts/portfolio/lakehouse.tar.gz \
+  --report artifacts/portfolio/package.json
+```
+
+O pacote conserva o README atual, inclui sua documentação Markdown referenciada,
+o código sanitizado e a demo inventada. O manifesto registra hashes e identifica
+a demo como histórica do MVP. Dados reais, credenciais, runtime e relatórios
+locais de execução permanecem fora do pacote.

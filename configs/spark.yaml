@@ -1,3 +1,5 @@
+# Perfil histórico do MVP e fixtures: driver de 2 GiB.
+# A expansão atual usa configs/spark_expansion.yaml; ver README.
 spark:
   master: local[2]
   app_name: credit-risk
